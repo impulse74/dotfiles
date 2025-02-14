@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "firacode:size=10" };
-static const char dmenufont[]       = "firacode:size=10";
+static const char *fonts[]          = { "firamono:size=10" };
+static const char dmenufont[]       = "firamono:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -58,11 +58,19 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
+static const char *volpluscmd[] = { "amixer", "set", "Master", "5%+", NULL };
+static const char *voldowncmd[] = { "amixer", "set", "Master", "5%-", NULL };
+static const char *volmutecmd[] = { "bash", "-c", "amixer get Master | grep -q '\\[off\\]' && amixer set Master unmute || amixer set Master mute", NULL };
+
+#include <X11/XF86keysym.h>
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ 0,             		XF86XK_AudioRaiseVolume,	 spawn,          {.v = volpluscmd } },
+	{ 0,             		XF86XK_AudioLowerVolume,	 spawn,          {.v = voldowncmd } },
+	{ 0,                            XF86XK_AudioMute, 		 spawn,          {.v = volmutecmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
