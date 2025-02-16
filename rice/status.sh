@@ -13,8 +13,15 @@ while true; do
         volume=$(amixer get Master | grep -oP '\d+%' | head -n 1)
     fi
 
+    network_if=$(ip route show default | awk '{print $5}')
+    if [[ -z "$network_if" ]]; then
+	    network_if_status="disconnected"
+    else
+	    network_if_status=$(ip route show default | awk '{print $5}')
+    fi
+
     # Update the status bar with the info
-    xsetroot -name "vol $volume | $datetime"
+    xsetroot -name "$network_if_status | vol $volume | $datetime"
 
     # Wait for 1 second before repeating
     sleep 1
