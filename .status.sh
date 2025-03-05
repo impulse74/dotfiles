@@ -7,7 +7,7 @@ while true; do
     datetime=$(date +"%d. %m. %Y %H:%M:%S")
 
     # Get volume level and mute status in one call
-    volume_info=$(amixer get Master)
+    volume_info=$(amixer get PCM)
     if echo "$volume_info" | grep -q '\[off\]'; then
         volume="mute"
     else
