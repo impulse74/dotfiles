@@ -55,15 +55,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         {
-            'maxmx03/solarized.nvim',
-            lazy = false, -- make sure we load this during startup if it is your main colorscheme
+            'navarasu/onedark.nvim',
+            lazy = false,
             priority = 1000, -- make sure to load this before all the other start plugins
             config = function()
-                vim.cmd.colorscheme "solarized"
-                vim.o.background = 'dark'
-                require('solarized').setup({
-                    variant = 'spring', -- "spring" | "summer" | "autumn" | "winter" (default)
-                })
+                require('onedark').setup {
+                    style = 'darker'
+                }
+                require('onedark').load()    
             end,
         },
         {
