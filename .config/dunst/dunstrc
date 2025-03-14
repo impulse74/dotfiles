@@ -17,7 +17,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = none
+    follow = keyboard
 
     ### Geometry ###
 
@@ -100,13 +100,13 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#444444"
+    frame_color = "#282c34"
 
     # Defines color of the progress bar
-    highlight = "#005577"
+    highlight = "#48b0bd"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -336,23 +336,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#bbbbbb"
+    background = "#1f2329"
+    foreground = "#a0a8b7"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#222222"
-    foreground = "#bbbbbb"
+    background = "#1f2329"
+    foreground = "#a0a8b7"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#222222"
-    foreground = "#bbbbbb"
+    background = "#1f2329"
+    foreground = "#a0a8b7"
     frame_color = "#ff0000"
     highlight = "#ee0000"
     timeout = 0
