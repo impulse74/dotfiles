@@ -16,7 +16,7 @@ picom &
 dunst &
 
 while :; do
-    statusbar
+    statusbar.sh
     sleep 1
 done &
 

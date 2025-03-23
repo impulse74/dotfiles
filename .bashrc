@@ -15,5 +15,4 @@ if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
     startx
 fi
 
-# Created by `pipx` on 2025-03-10 13:24:32
 export PATH="$PATH:/home/ace/.local/bin"
