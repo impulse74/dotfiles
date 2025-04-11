@@ -57,10 +57,10 @@
 
     # Set the progress bar height. This includes the frame, so make sure
     # it's at least twice as big as the frame width.
-    progress_bar_height = 8
+    progress_bar_height = 10
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 0
+    progress_bar_frame_width = 2
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 150
@@ -108,10 +108,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#6e6f70"
+    frame_color = "#444444"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -188,7 +188,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -235,7 +235,7 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 128
+    max_icon_size = 32
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -341,25 +341,25 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#161616"
-    foreground = "#f2f4f8"
-    highlight = "#33b1ff"
+    background = "#222222"
+    foreground = "#bbbbbb"
+    highlight = "#005577"
     timeout = 10
     # Icon for notifications with low urgency
     # default_icon = dialog-information
 
 [urgency_normal]
-    background = "#161616"
-    foreground = "#f2f4f8"
-    highlight = "#33b1ff"
+    background = "#222222"
+    foreground = "#bbbbbb"
+    highlight = "#005577"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency
     # default_icon = dialog-information
 
 [urgency_critical]
-    background = "#161616"
-    foreground = "#f2f4f8"
+    background = "#222222"
+    foreground = "#bbbbbb"
     frame_color = "#ff0000"
     timeout = 0
     override_pause_level = 60
